@@ -14,7 +14,7 @@ class Node:
 
 
 # LinkedList Class
-class LinkedList:
+class SList:
     def __init__(self, item):
         self.head = Node(item)
 
@@ -45,9 +45,9 @@ class LinkedList:
 
 
 # Test Class
-class LinkedListTest(unittest.TestCase):
+class SinglyLinkedListTest(unittest.TestCase):
     def test(self):
-        ll = LinkedList(3)
+        ll = SList(3)
         ll.insert(4)
         ll.insert(5)
         ll.print_list()
