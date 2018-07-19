@@ -1,7 +1,9 @@
+# Sort & Search
+
 ## 정렬 (Sort)
 * 배열 안의 원소들을 정해진 기준에 따라 새로 늘어놓는 것
 
-## 정렬과 관련된 함수들
+### 정렬과 관련된 함수들
 ### 1. sorted()
 > * 내장 함수
 > * 정렬된 새로운 리스트를 얻어낸다.
@@ -40,3 +42,37 @@ L.sort(key=lambda x: x['name'])
 >>> [{'name':'John', 'score':92},
      {'name':'Paul', 'score':83}]
 ```
+
+## 탐색 (Search)
+
+### 1. 선형 탐색 (Linear Search)
+> 처음부터 순서대로 탐색하는 알고리즘으로 리스트의 길이에 비례해 O(n)의 시간이 소요된다. 
+```
+def linear_search(L, x):
+     i = 0
+     while x < len(L) and L[i] != x:
+          i += 1
+     if i < len(L):
+          return i
+     else:
+          return -1
+```
+
+### 2. 이진 탐색 (Binary Search)
+> 리스트가 정렬되어있을 경우에만 사용이 가능한 알고리즘으로 O(logn)의 시간이 소요된다.
+> 한 번 비교가 일어날 때마다 리스트가 반씩 줄어들며, 이를 divide & conquer라 한다.
+```
+def solution(L, x):
+    idx, lower, upper = -1, 0, len(L) - 1 
+    while lower <= upper:
+        middle = (lower + upper) // 2
+        if L[middle] == x:
+            idx = middle
+            return idx
+        elif L[middle] < x:
+            lower = middle + 1
+        else:
+            upper = middle - 1
+    return idx
+```
+     
