@@ -61,20 +61,7 @@ def linear_search(L, x):
 ### 2. 이진 탐색 (Binary Search)
 > 리스트가 정렬되어있을 경우에만 사용이 가능한 알고리즘으로 O(logn)의 시간이 소요된다.
 > 한 번 비교가 일어날 때마다 리스트가 반씩 줄어들며, 이를 divide & conquer라 한다.
-```
-def solution(L, x):
-    idx, lower, upper = -1, 0, len(L) - 1 
-    while lower <= upper:
-        middle = (lower + upper) // 2
-        if L[middle] == x:
-            idx = middle
-            return idx
-        elif L[middle] < x:
-            lower = middle + 1
-        else:
-            upper = middle - 1
-    return idx
-```
+
      
 ### 실습 1.이진 탐색 구현해보기
 ```
