@@ -1,7 +1,7 @@
 # Sort & Search
 
 ## 정렬 (Sort)
-* 배열 안의 원소들을 정해진 기준에 따라 새로 늘어놓는 것
+> 배열 안의 원소들을 정해진 기준에 따라 새로 늘어놓는 것
 
 ### 정렬과 관련된 함수들
 ### 1. sorted()
@@ -76,3 +76,18 @@ def solution(L, x):
     return idx
 ```
      
+### 실습 1.이진 탐색 구현해보기
+```
+def solution(L, x):
+    idx, lower, upper = -1, 0, len(L) - 1 
+    while lower <= upper:
+        middle = (lower + upper) // 2
+        if L[middle] == x:
+            idx = middle
+            return idx
+        elif L[middle] < x:
+            lower = middle + 1
+        else:
+            upper = middle - 1
+    return idx
+```
