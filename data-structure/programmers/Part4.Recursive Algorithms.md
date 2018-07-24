@@ -1,8 +1,8 @@
 # Recursive Algorithms
 
-## 재귀 함수 (recursive functions)란?
+## 재귀 함수(recursive functions)란?
 > * 하나의 함수에서 자신을 다시 호출하여 작업을 수행하는 것으로 생각보다 많은 문제를 재귀적으로 해결할 수 있다.
-> * 재귀 함수에서 종결조건은 필수로 지정해야한다.
+> * 재귀 함수에서 종결 조건은 필수로 지정해야한다.
 
 ## 예제
 
@@ -26,5 +26,22 @@ def multi(n):
     return 1
   else:
     return n * multi(n-1)
+```
+
+## 재귀 알고리즘의 효율
+> * 모든 재귀 알고리즘(Recursive version)은 반복 알고리즘(Iterative version)이라는 반대되는 알고리즘을 갖는다.
+> * 재귀 알고리즘의 효율성, 시간 복잡도가 항상 좋지는 않다는 것을 명심하자.
+
+### 예시
+```
+재귀 알고리즘(Recursive version)        반복 알고리즘(Iterative version)
+def sum(n):                          def sum(n):
+  if n <= 1:                           s = 0
+    return 1                           while s >= 0:
+  else:                                  s += n
+    return n + sum(n-1)                  n -= 1
+                                       return s
+
+* 위의 예는 재귀 알고리즘은 함수를 반복적으로 호출하는 작업이 필요하기 때문에 오히려 반복 알고리즘이 효율적이다.
 ```
 
