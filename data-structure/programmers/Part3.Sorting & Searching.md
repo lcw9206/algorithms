@@ -14,7 +14,7 @@
 > * 반환값이 None이며, 원본이 바뀌는 in-place 방식이다. 
 
 ### sorted(), sort()의 차이점은?
-> 반환값의 유무와 원본의 변경 
+> 반환값의 유무와 원본의 변경 여부
 ```
 L = [3, 4, 2, 5]
 L2 = sorted(L)
@@ -64,7 +64,7 @@ def linear_search(L, x):
 > * 한 번 비교가 일어날 때마다 리스트가 반씩 줄어들며, 이를 divide & conquer라 한다.
 
      
-### 실습 1. 이진 탐색 구현해보기
+### 실습. 이진 탐색 구현해보기
 ```
 def solution(L, x):
     lower, upper = 0, len(L) - 1 
