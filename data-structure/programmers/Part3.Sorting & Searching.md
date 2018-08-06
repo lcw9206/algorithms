@@ -14,7 +14,7 @@
 > * 반환값이 None이며, 원본이 바뀌는 in-place 방식이다. 
 
 ### sorted(), sort()의 차이점은?
-> sorted()는 정렬된 리스트를 받을 변수가 필요하며 해당 리스트는 변화가 없고, sort()는 해당 리스트가 정렬된다.
+> 반환값의 유무와 원본의 변경 
 ```
 L = [3, 4, 2, 5]
 L2 = sorted(L)
@@ -67,15 +67,14 @@ def linear_search(L, x):
 ### 실습 1. 이진 탐색 구현해보기
 ```
 def solution(L, x):
-    idx, lower, upper = -1, 0, len(L) - 1 
+    lower, upper = 0, len(L) - 1 
     while lower <= upper:
         middle = (lower + upper) // 2
         if L[middle] == x:
-            idx = middle
-            return idx
+            return L.index(x)
         elif L[middle] < x:
             lower = middle + 1
         else:
             upper = middle - 1
-    return idx
+    return -1
 ```
