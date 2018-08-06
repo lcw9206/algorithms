@@ -45,3 +45,22 @@ def sum(n):                          def sum(n):
 * 위의 예는 재귀 알고리즘은 함수를 반복적으로 호출하는 작업이 필요하기 때문에 오히려 반복 알고리즘이 효율적이다.
 ```
 
+
+### 실습1. 피보나치 순열 구현하기 (재귀)
+```
+def solution(x):
+    if x <= 1:
+        return x
+    else:
+        return solution(x-2) + solution(x-1)
+```
+
+### 실습2. 피보나치 순열 구현하기 (반복)
+```
+def solution(x):
+    prev, curr = 0, 1
+    for i in range(x):
+        prev, curr = curr, prev + curr
+    return prev
+```
+
