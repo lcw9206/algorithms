@@ -84,3 +84,19 @@ def solution(L, x, l, u):
     else:
         return solution(L, x, u, mid + 1)
 ```
+
+## 실습2. 하노이의 탑 (재귀)
+* n개의 원반을 최종적으로 도착기둥으로 옮기는 것이 목표로 대표적인 재귀함수의 예다.
+> 1. n-1개의 원반을 중간기둥으로 옮긴다.
+> 2. n번째의 원반을 도착기둥으로 옮긴다.
+> 3. n-1개의 원반을 중간기둥에서 도착기둥으로 옮긴다.
+```
+def hanoi(n, startp, wayp, endp):
+    if n == 1:
+        print('{}번 원반을 {}에서 {}로 옮겼습니다.'.format(n, startp, endp))
+        return
+    else:
+        hanoi(n-1, startp, endp, wayp)
+        print('{}번 원반을 {}에서 {}로 옮겼습니다.'.format(n, startp, endp))
+        hanoi(n-1, wayp, startp, endp)
+```
